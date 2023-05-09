@@ -55,7 +55,7 @@ class Api::V1::ReservationsController < ApplicationController
   end
 
   def check_user
-    return unless current_user != @reservation.user
+    return unless @user != @reservation.user
 
     render json: { errors: 'You are not authorized to update this reservation.' }, status: :unauthorized
   end
