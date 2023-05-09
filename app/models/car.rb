@@ -4,7 +4,7 @@ class Car < ApplicationRecord
 
   validates :make, presence: true
   validates :model, presence: true
-  validates :year, presence: true
+  validates :year, presence: true, length: { maximum: 4 }
   validates :color, presence: true
   validates :body_type, presence: true
   validates :engine_capacity, presence: true

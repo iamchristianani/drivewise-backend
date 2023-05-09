@@ -22,7 +22,7 @@ class Api::V1::UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user
       @user.destroy
-      render json: { message: 'user deleted successfully.' }, status: 200
+      render json: { message: 'User deleted successfully.' }, status: 200
     else
       render error: { error: 'Unable to delete user.' }, status: 400
     end
@@ -30,11 +30,10 @@ class Api::V1::UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user
-      @user.update(user_params)
-      render json: { message: 'user successfully updated.' }, status: 200
+    if @user.update(user_params)
+      render json: { message: 'user successfully updated.', username: user_params[:username] }, status: 200
     else
-      render error: { error: 'Unable to update user.' }, status: 400
+      render json: { error: 'Unable to update user.' }, status: 400
     end
   end
 
