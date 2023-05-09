@@ -9,7 +9,7 @@ class Car < ApplicationRecord
   validates :body_type, presence: true
   validates :engine_capacity, presence: true
   validates :engine_cylinders, presence: true
-  validates :turbo, presence: true
+  validates_inclusion_of :turbo, in: [true, false]
   validates :horsepower, presence: true
   validates :torque, presence: true
   validates :weight, presence: true
