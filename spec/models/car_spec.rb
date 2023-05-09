@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Car', type: :model do
-
   describe 'associations' do
     it 'has many reservations' do
       car = Car.reflect_on_association(:reservations)
@@ -14,10 +13,10 @@ RSpec.describe 'Car', type: :model do
     end
   end
 
-  describe 'validations' do 
-      
+  describe 'validations' do
     before(:each) do
-      @car = Car.new(make: 'testmake', model: 'testmodel', year: 2020, color: 'testcolor', body_type: 'testbodytype', engine_capacity: 2.0, engine_cylinders: 4, turbo: false, horsepower: 200, torque: 200, weight: 2000, drivetrain: 'testdrivetrain', transmission: 'testtransmission', fuel_type: 'testfueltype', doors: 4, seats: 5, mileage: 1000, price: 10000, description: 'testdescription', image: 'testimage')
+      @car = Car.new(make: 'testmake', model: 'testmodel', year: 2020, color: 'testcolor', body_type: 'testbodytype', engine_capacity: 2.0, engine_cylinders: 4, turbo: false, horsepower: 200,
+                     torque: 200, weight: 2000, drivetrain: 'testdrivetrain', transmission: 'testtransmission', fuel_type: 'testfueltype', doors: 4, seats: 5, mileage: 1000, price: 10_000, description: 'testdescription', image: 'testimage')
     end
 
     it 'is valid with valid attributes' do
@@ -123,6 +122,5 @@ RSpec.describe 'Car', type: :model do
       @car.image = nil
       expect(@car).to_not be_valid
     end
-
   end
 end
