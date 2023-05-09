@@ -44,6 +44,12 @@ group :development, :test do
 
   # Use Dotenv rails to load environment variables from .env [
   gem 'dotenv-rails'
+
+  # Use factory_bot for difining test data
+  gem 'factory_bot_rails'
+
+  # Use Faker for generating random test data
+  gem 'faker'
 end
 
 group :development do
