@@ -30,3 +30,7 @@
 
 # Ignore .env file containing credentials.
 /.env
+
+# Ignore Gemfile.locks
+/Gemfile.lock
+
