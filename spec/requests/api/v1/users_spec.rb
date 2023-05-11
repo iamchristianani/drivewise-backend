@@ -68,7 +68,6 @@ RSpec.describe 'api/v1/users', type: :request do
         required: %w[username]
       }
 
-
       response(200, 'successful') do
         after do |example|
           example.metadata[:response][:content] = {
