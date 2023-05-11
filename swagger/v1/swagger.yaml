@@ -1,0 +1,132 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/cars":
+    get:
+      summary: list cars
+      tags:
+      - Cars
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create car
+      tags:
+      - Cars
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                make:
+                  type: string
+                  example: Honda
+                model:
+                  type: string
+                  example: Charger
+                year:
+                  type: integer
+                  example: 2018
+                color:
+                  type: string
+                  example: Blue
+                body_type:
+                  type: string
+                  example: Wagon
+                engine_capacity:
+                  type: integer
+                  example: 4 Cylinder Engine
+                engine_cylinders:
+                  type: integer
+                  example: 1 Cylinder Engine
+                turbo:
+                  type: boolean
+                  example: false
+                horsepower:
+                  type: integer
+                  example: 944
+                torque:
+                  type: integer
+                  example: 797
+                weight:
+                  type: integer
+                  example: 2429
+                drivetrain:
+                  type: string
+                  example: FWD
+                transmission:
+                  type: string
+                  example: CVT
+                fuel_type:
+                  type: string
+                  example: Diesel
+                doors:
+                  type: integer
+                  example: 4
+                seats:
+                  type: integer
+                  example: 2
+                mileage:
+                  type: integer
+                  example: 81403
+                price:
+                  type: integer
+                  example: 5780.11
+                description:
+                  type: string
+                  example: Commodi non ut. Illo est odit. Temporibus quae nihil.
+                image:
+                  type: string
+                  example: http://yost.example/ricardo
+              required:
+              - make
+              - model
+              - year
+              - color
+              - body_type
+              - engine_capacity
+              - engine_cylinders
+              - turbo
+              - horsepower
+              - torque
+              - weight
+              - drivetrain
+              - transmission
+              - fuel_type
+              - doors
+              - seats
+              - mileage
+              - price
+              - description
+              - image
+  "/api/v1/cars/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show car
+      responses:
+        '200':
+          description: successful
+    delete:
+      summary: delete car
+      responses:
+        '200':
+          description: successful
+servers:
+- url: http://{defaultHost}
+  variables:
+    defaultHost:
+      default: 127.0.0.1:3000/
