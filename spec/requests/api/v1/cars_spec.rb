@@ -46,6 +46,7 @@ RSpec.describe 'api/v1/cars', type: :request do
         required: %w[make model year color body_type engine_capacity engine_cylinders turbo horsepower torque weight drivetrain transmission fuel_type doors seats mileage price description image]
       }
       response(200, 'successful') do
+        tags 'Cars'
         after do |example|
           example.metadata[:response][:content] = {
             'application/json' => {
@@ -63,6 +64,7 @@ RSpec.describe 'api/v1/cars', type: :request do
     parameter name: 'id', in: :path, type: :string, description: 'id'
 
     get('show car') do
+      tags 'Cars'
       response(200, 'successful') do
         let(:id) { '123' }
 
@@ -78,6 +80,7 @@ RSpec.describe 'api/v1/cars', type: :request do
     end
 
     delete('delete car') do
+      tags 'Cars'
       response(200, 'successful') do
         let(:id) { '123' }
 

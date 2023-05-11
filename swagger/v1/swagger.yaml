@@ -28,64 +28,65 @@ paths:
               properties:
                 make:
                   type: string
-                  example: Honda
+                  example: Audi
                 model:
                   type: string
-                  example: Charger
+                  example: Mustang
                 year:
                   type: integer
-                  example: 2018
+                  example: 2021
                 color:
                   type: string
-                  example: Blue
+                  example: Yellow
                 body_type:
                   type: string
-                  example: Wagon
+                  example: Sedan
                 engine_capacity:
                   type: integer
-                  example: 4 Cylinder Engine
+                  example: 1 Cylinder Engine
                 engine_cylinders:
                   type: integer
-                  example: 1 Cylinder Engine
+                  example: 3 Cylinder Engine
                 turbo:
                   type: boolean
                   example: false
                 horsepower:
                   type: integer
-                  example: 944
+                  example: 601
                 torque:
                   type: integer
-                  example: 797
+                  example: 270
                 weight:
                   type: integer
-                  example: 2429
+                  example: 1624
                 drivetrain:
                   type: string
-                  example: FWD
+                  example: RWD
                 transmission:
                   type: string
-                  example: CVT
+                  example: Automatic
                 fuel_type:
                   type: string
-                  example: Diesel
+                  example: E-85/Gasoline
                 doors:
                   type: integer
                   example: 4
                 seats:
                   type: integer
-                  example: 2
+                  example: 4
                 mileage:
                   type: integer
-                  example: 81403
+                  example: 36466
                 price:
                   type: integer
-                  example: 5780.11
+                  example: 2272.22
                 description:
                   type: string
-                  example: Commodi non ut. Illo est odit. Temporibus quae nihil.
+                  example: Omnis accusantium quis. Accusantium nobis aperiam. Ut provident
+                    ea.
                 image:
                   type: string
-                  example: http://yost.example/ricardo
+                  example: http://bode.example/donald
               required:
               - make
               - model
@@ -117,11 +118,15 @@ paths:
         type: string
     get:
       summary: show car
+      tags:
+      - Cars
       responses:
         '200':
           description: successful
     delete:
       summary: delete car
+      tags:
+      - Cars
       responses:
         '200':
           description: successful
