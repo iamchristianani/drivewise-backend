@@ -1,13 +1,10 @@
 require 'swagger_helper'
 
 RSpec.describe 'api/v1/users', type: :request do
-
   path '/api/v1/users' do
-
     get('list users') do
       tags 'Users'
       response(200, 'successful') do
-
         after do |example|
           example.metadata[:response][:content] = {
             'application/json' => {
@@ -25,12 +22,11 @@ RSpec.describe 'api/v1/users', type: :request do
       parameter name: :user, in: :body, schema: {
         type: :object,
         properties: {
-         username: { type: :string, example: Faker::Internet.username },
-    },
+          username: { type: :string, example: Faker::Internet.username }
+        },
         required: %w[username]
-  }
+      }
       response(200, 'successful') do
-
         after do |example|
           example.metadata[:response][:content] = {
             'application/json' => {
@@ -50,7 +46,6 @@ RSpec.describe 'api/v1/users', type: :request do
     get('show user') do
       tags 'Users'
       response(200, 'successful') do
-
         after do |example|
           example.metadata[:response][:content] = {
             'application/json' => {
@@ -68,16 +63,13 @@ RSpec.describe 'api/v1/users', type: :request do
       parameter name: :user, in: :body, schema: {
         type: :object,
         properties: {
-          username: { type: :string, example: Faker::Internet.username },
+          username: { type: :string, example: Faker::Internet.username }
         },
         required: %w[username]
       }
 
 
-   
       response(200, 'successful') do
-
-
         after do |example|
           example.metadata[:response][:content] = {
             'application/json' => {
