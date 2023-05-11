@@ -28,65 +28,65 @@ paths:
               properties:
                 make:
                   type: string
-                  example: Audi
+                  example: Nissan
                 model:
                   type: string
-                  example: Mustang
+                  example: MKZ
                 year:
                   type: integer
                   example: 2021
                 color:
                   type: string
-                  example: Yellow
+                  example: Violet
                 body_type:
                   type: string
-                  example: Sedan
+                  example: Passenger Van
                 engine_capacity:
                   type: integer
-                  example: 1 Cylinder Engine
+                  example: 2 Cylinder Engine
                 engine_cylinders:
                   type: integer
-                  example: 3 Cylinder Engine
+                  example: 2 Cylinder Engine
                 turbo:
                   type: boolean
                   example: false
                 horsepower:
                   type: integer
-                  example: 601
+                  example: 494
                 torque:
                   type: integer
-                  example: 270
+                  example: 490
                 weight:
                   type: integer
-                  example: 1624
+                  example: 4359
                 drivetrain:
                   type: string
-                  example: RWD
+                  example: FWD
                 transmission:
                   type: string
-                  example: Automatic
+                  example: CVT
                 fuel_type:
                   type: string
-                  example: E-85/Gasoline
+                  example: Diesel
                 doors:
                   type: integer
-                  example: 4
+                  example: 2
                 seats:
                   type: integer
-                  example: 4
+                  example: 5
                 mileage:
                   type: integer
-                  example: 36466
+                  example: 27762
                 price:
                   type: integer
-                  example: 2272.22
+                  example: 6433.05
                 description:
                   type: string
-                  example: Omnis accusantium quis. Accusantium nobis aperiam. Ut provident
-                    ea.
+                  example: Numquam voluptatem quod. Eveniet deleniti molestiae. Doloremque
+                    nostrum recusandae.
                 image:
                   type: string
-                  example: http://bode.example/donald
+                  example: http://turcotte-jenkins.test/nancie_buckridge
               required:
               - make
               - model
@@ -127,6 +127,74 @@ paths:
       summary: delete car
       tags:
       - Cars
+      responses:
+        '200':
+          description: successful
+  "/api/v1/users":
+    get:
+      summary: list users
+      tags:
+      - Users
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create user
+      tags:
+      - Users
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                  example: nestor.oreilly
+              required:
+              - username
+  "/api/v1/users/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show user
+      tags:
+      - Users
+      responses:
+        '200':
+          description: successful
+    patch:
+      summary: update user
+      tags:
+      - Users
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                  example: colby
+              required:
+              - username
+    delete:
+      summary: delete user
+      tags:
+      - Users
       responses:
         '200':
           description: successful
