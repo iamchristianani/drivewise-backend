@@ -1,7 +1,7 @@
 ---
 openapi: 3.0.1
 info:
-  title: API V1
+  title: Drivewise API
   version: v1
 paths:
   "/api/v1/cars":
@@ -28,65 +28,65 @@ paths:
               properties:
                 make:
                   type: string
-                  example: Nissan
+                  example: Lincoln
                 model:
                   type: string
-                  example: MKZ
+                  example: A8
                 year:
                   type: integer
-                  example: 2021
+                  example: 2019
                 color:
                   type: string
-                  example: Violet
+                  example: Grey
                 body_type:
                   type: string
-                  example: Passenger Van
+                  example: Coupe
                 engine_capacity:
                   type: integer
-                  example: 2 Cylinder Engine
+                  example: 3 Cylinder Engine
                 engine_cylinders:
                   type: integer
-                  example: 2 Cylinder Engine
+                  example: 1 Cylinder Engine
                 turbo:
                   type: boolean
-                  example: false
+                  example: true
                 horsepower:
                   type: integer
-                  example: 494
+                  example: 425
                 torque:
                   type: integer
-                  example: 490
+                  example: 715
                 weight:
                   type: integer
-                  example: 4359
+                  example: 7669
                 drivetrain:
                   type: string
-                  example: FWD
+                  example: AWD
                 transmission:
                   type: string
                   example: CVT
                 fuel_type:
                   type: string
-                  example: Diesel
+                  example: Ethanol
                 doors:
                   type: integer
                   example: 2
                 seats:
                   type: integer
-                  example: 5
+                  example: 4
                 mileage:
                   type: integer
-                  example: 27762
+                  example: 83569
                 price:
                   type: integer
-                  example: 6433.05
+                  example: 5132.81
                 description:
                   type: string
-                  example: Numquam voluptatem quod. Eveniet deleniti molestiae. Doloremque
-                    nostrum recusandae.
+                  example: Quos nihil adipisci. Explicabo sed officiis. Architecto
+                    reprehenderit vel.
                 image:
                   type: string
-                  example: http://turcotte-jenkins.test/nancie_buckridge
+                  example: http://hilpert.test/chantal
               required:
               - make
               - model
@@ -130,6 +130,122 @@ paths:
       responses:
         '200':
           description: successful
+  "/api/v1/reservations":
+    get:
+      summary: list all reservations
+      tags:
+      - Reservations
+      responses:
+        '200':
+          description: successful
+  "/api/v1/reservations/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show reservation
+      tags:
+      - Reservations
+      responses:
+        '200':
+          description: successful
+  "/api/v1/users/{user_id}/reservations":
+    parameters:
+    - name: user_id
+      in: path
+      description: user_id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: list user's reservations
+      tags:
+      - Reservations
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create reservation
+      parameters:
+      - name: car_id
+        in: path
+        description: car_id
+        required: true
+        schema:
+          type: string
+      tags:
+      - Reservations
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reservation_date:
+                  type: string
+                  example: '2023-08-03'
+                city:
+                  type: string
+                  example: North Leslie
+              required:
+              - reservation_date
+              - city
+              - car_id
+              - user_id
+  "/api/v1/users/{user_id}/reservations/{id}":
+    parameters:
+    - name: user_id
+      in: path
+      description: user_id
+      required: true
+      schema:
+        type: string
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show reservation
+      tags:
+      - Reservations
+      responses:
+        '200':
+          description: successful
+    patch:
+      summary: update reservation
+      tags:
+      - Reservations
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                city:
+                  type: string
+                  example: Antoniafort
+              required:
+              - city
+    delete:
+      summary: delete reservation
+      tags:
+      - Reservations
+      responses:
+        '200':
+          description: successful
   "/api/v1/users":
     get:
       summary: list users
@@ -154,7 +270,7 @@ paths:
               properties:
                 username:
                   type: string
-                  example: nestor.oreilly
+                  example: jona
               required:
               - username
   "/api/v1/users/{id}":
@@ -188,7 +304,7 @@ paths:
               properties:
                 username:
                   type: string
-                  example: colby
+                  example: kazuko.terry
               required:
               - username
     delete:
