@@ -5,13 +5,6 @@ RSpec.describe 'api/v1/users', type: :request do
     get('list users') do
       tags 'Users'
       response(200, 'successful') do
-        after do |example|
-          example.metadata[:response][:content] = {
-            'application/json' => {
-              example: JSON.parse(response.body, symbolize_names: true)
-            }
-          }
-        end
         run_test!
       end
     end
@@ -26,33 +19,20 @@ RSpec.describe 'api/v1/users', type: :request do
         },
         required: %w[username]
       }
-      response(200, 'successful') do
-        after do |example|
-          example.metadata[:response][:content] = {
-            'application/json' => {
-              example: JSON.parse(response.body, symbolize_names: true)
-            }
-          }
-        end
+      response(201, 'successful') do
+        let(:user) { user_params }
         run_test!
       end
     end
   end
 
   path '/api/v1/users/{id}' do
-    # You'll want to customize the parameter types...
     parameter name: 'id', in: :path, type: :string, description: 'id'
 
     get('show user') do
       tags 'Users'
       response(200, 'successful') do
-        after do |example|
-          example.metadata[:response][:content] = {
-            'application/json' => {
-              example: JSON.parse(response.body, symbolize_names: true)
-            }
-          }
-        end
+        let(:id) { User.create(user_params).id }
         run_test!
       end
     end
@@ -69,13 +49,8 @@ RSpec.describe 'api/v1/users', type: :request do
       }
 
       response(200, 'successful') do
-        after do |example|
-          example.metadata[:response][:content] = {
-            'application/json' => {
-              example: JSON.parse(response.body, symbolize_names: true)
-            }
-          }
-        end
+        let(:id) { User.create(user_params).id }
+        let(:user) { { username: 'testusername' } }
         run_test!
       end
     end
@@ -83,17 +58,15 @@ RSpec.describe 'api/v1/users', type: :request do
     delete('delete user') do
       tags 'Users'
       response(200, 'successful') do
-        let(:id) { '123' }
-
-        after do |example|
-          example.metadata[:response][:content] = {
-            'application/json' => {
-              example: JSON.parse(response.body, symbolize_names: true)
-            }
-          }
-        end
+        let(:id) { User.create(user_params).id }
         run_test!
       end
     end
+  end
+
+  def user_params
+    {
+      username: Faker::Internet.username
+    }
   end
 end
