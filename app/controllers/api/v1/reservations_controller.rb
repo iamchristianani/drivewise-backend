@@ -10,11 +10,11 @@ class Api::V1::ReservationsController < ApplicationController
     else
       @reservations = Reservation.all
     end
-    render json: @reservations
+    render json: @reservations, status: 200
   end
 
   def show
-    render json: @reservation
+    render json: @reservation, status: 200
   end
 
   def create
@@ -38,9 +38,9 @@ class Api::V1::ReservationsController < ApplicationController
   def destroy
     if @reservation
       @reservation.destroy
-      render json: { errors: @reservation.errors.full_messages }, status: 200
+      render json: { message: 'Reservation deleted successfully.' }, status: 204
     else
-      render error: { errors: @reservation.errors.full_messages }, status: 400
+      render error: { errors: @reservation.errors.full_messages }, status: 404
     end
   end
 
