@@ -24,7 +24,7 @@ RSpec.describe 'User', type: :request do
 
     it 'renders the show template with the requested user' do
       user = User.create(username: 'testuser')
-      get "/api/v1/users/#{user.id}"
+      get "/api/v1/users/#{user.username}"
       parsed_response = JSON.parse(response.body)
       expect(parsed_response['username']).to eq(user.username)
     end
