@@ -1,17 +1,15 @@
 require 'swagger_helper'
 
 RSpec.describe 'api/v1/reservations', type: :request do
+  before do
+    @user = FactoryBot.create(:user)
+    @car = FactoryBot.create(:car)
+  end
+
   path '/api/v1/reservations' do
     get('list all reservations') do
       tags 'Reservations'
       response(200, 'successful') do
-        after do |example|
-          example.metadata[:response][:content] = {
-            'application/json' => {
-              example: JSON.parse(response.body, symbolize_names: true)
-            }
-          }
-        end
         run_test!
       end
     end
@@ -23,13 +21,7 @@ RSpec.describe 'api/v1/reservations', type: :request do
     get('show reservation') do
       tags 'Reservations'
       response(200, 'successful') do
-        after do |example|
-          example.metadata[:response][:content] = {
-            'application/json' => {
-              example: JSON.parse(response.body, symbolize_names: true)
-            }
-          }
-        end
+        let(:id) { Reservation.create(reservation_params(car_id: @car.id, user_id: @user.id)).id }
         run_test!
       end
     end
@@ -37,16 +29,11 @@ RSpec.describe 'api/v1/reservations', type: :request do
 
   path '/api/v1/users/{user_id}/reservations' do
     parameter name: 'user_id', in: :path, type: :string, description: 'user_id'
+
     get('list user\'s reservations') do
       tags 'Reservations'
       response(200, 'successful') do
-        after do |example|
-          example.metadata[:response][:content] = {
-            'application/json' => {
-              example: JSON.parse(response.body, symbolize_names: true)
-            }
-          }
-        end
+        let(:user_id) { @user.id }
         run_test!
       end
     end
@@ -63,14 +50,10 @@ RSpec.describe 'api/v1/reservations', type: :request do
         },
         required: %w[reservation_date city car_id user_id]
       }
-      response(200, 'successful') do
-        after do |example|
-          example.metadata[:response][:content] = {
-            'application/json' => {
-              example: JSON.parse(response.body, symbolize_names: true)
-            }
-          }
-        end
+      response(201, 'successful') do
+        let(:car_id) { @car.id }
+        let(:user_id) { @user.id }
+        let(:reservation) { reservation_params(car_id: @car.id, user_id: @user.id) }
         run_test!
       end
     end
@@ -83,16 +66,9 @@ RSpec.describe 'api/v1/reservations', type: :request do
     get('show reservation') do
       tags 'Reservations'
       response(200, 'successful') do
-        # let(:user_id) { '123' }
-        # let(:id) { '123' }
+        let(:user_id) { @user.id }
+        let(:id) { Reservation.create(reservation_params(car_id: @car.id, user_id: @user.id)).id }
 
-        after do |example|
-          example.metadata[:response][:content] = {
-            'application/json' => {
-              example: JSON.parse(response.body, symbolize_names: true)
-            }
-          }
-        end
         run_test!
       end
     end
@@ -108,35 +84,29 @@ RSpec.describe 'api/v1/reservations', type: :request do
         required: %w[city]
       }
       response(200, 'successful') do
-        # let(:user_id) { '123' }
-        # let(:id) { '123' }
-
-        after do |example|
-          example.metadata[:response][:content] = {
-            'application/json' => {
-              example: JSON.parse(response.body, symbolize_names: true)
-            }
-          }
-        end
+        let(:user_id) { @user.id }
+        let(:id) { Reservation.create(reservation_params(car_id: @car.id, user_id: @user.id)).id }
+        let(:reservation) { { city: Faker::Address.city } }
         run_test!
       end
     end
 
     delete('delete reservation') do
       tags 'Reservations'
-      response(200, 'successful') do
-        # let(:user_id) { '123' }
-        # let(:id) { '123' }
-
-        after do |example|
-          example.metadata[:response][:content] = {
-            'application/json' => {
-              example: JSON.parse(response.body, symbolize_names: true)
-            }
-          }
-        end
+      response(204, 'no content') do
+        let(:user_id) { @user.id }
+        let(:id) { Reservation.create(reservation_params(car_id: @car.id, user_id: @user.id)).id }
         run_test!
       end
     end
+  end
+
+  def reservation_params(car_id: nil, user_id: nil)
+    {
+      reservation_date: Faker::Date.between(from: '2023-05-19', to: '2023-12-31'),
+      city: Faker::Address.city,
+      car_id: car_id,
+      user_id: user_id
+    }
   end
 end

@@ -5,13 +5,6 @@ RSpec.describe 'api/v1/cars', type: :request do
     get('list cars') do
       tags 'Cars'
       response(200, 'successful') do
-        after do |example|
-          example.metadata[:response][:content] = {
-            'application/json' => {
-              example: JSON.parse(response.body, symbolize_names: true)
-            }
-          }
-        end
         run_test!
       end
     end
@@ -45,36 +38,20 @@ RSpec.describe 'api/v1/cars', type: :request do
         },
         required: %w[make model year color body_type engine_capacity engine_cylinders turbo horsepower torque weight drivetrain transmission fuel_type doors seats mileage price description image]
       }
-      response(200, 'successful') do
-        tags 'Cars'
-        after do |example|
-          example.metadata[:response][:content] = {
-            'application/json' => {
-              example: JSON.parse(response.body, symbolize_names: true)
-            }
-          }
-        end
+      response(201, 'successful') do
+        let(:car) { car_params }
         run_test!
       end
     end
   end
 
   path '/api/v1/cars/{id}' do
-    # You'll want to customize the parameter types...
     parameter name: 'id', in: :path, type: :string, description: 'id'
 
     get('show car') do
       tags 'Cars'
       response(200, 'successful') do
-        let(:id) { '123' }
-
-        after do |example|
-          example.metadata[:response][:content] = {
-            'application/json' => {
-              example: JSON.parse(response.body, symbolize_names: true)
-            }
-          }
-        end
+        let(:id) { Car.create(car_params).id }
         run_test!
       end
     end
@@ -82,17 +59,34 @@ RSpec.describe 'api/v1/cars', type: :request do
     delete('delete car') do
       tags 'Cars'
       response(200, 'successful') do
-        let(:id) { '123' }
-
-        after do |example|
-          example.metadata[:response][:content] = {
-            'application/json' => {
-              example: JSON.parse(response.body, symbolize_names: true)
-            }
-          }
-        end
+        let(:id) { Car.create(car_params).id }
         run_test!
       end
     end
+  end
+
+  def car_params
+    {
+      make: Faker::Vehicle.make,
+      model: Faker::Vehicle.model,
+      year: Faker::Vehicle.year,
+      color: Faker::Vehicle.color,
+      body_type: Faker::Vehicle.car_type,
+      engine_capacity: Faker::Vehicle.engine_size,
+      engine_cylinders: Faker::Vehicle.engine,
+      turbo: Faker::Boolean.boolean,
+      horsepower: Faker::Number.between(from: 100, to: 1000),
+      torque: Faker::Number.between(from: 100, to: 1000),
+      weight: Faker::Number.between(from: 1000, to: 10_000),
+      drivetrain: Faker::Vehicle.drive_type,
+      transmission: Faker::Vehicle.transmission,
+      fuel_type: Faker::Vehicle.fuel_type,
+      doors: Faker::Vehicle.doors,
+      seats: Faker::Number.between(from: 2, to: 8),
+      mileage: Faker::Vehicle.mileage,
+      price: Faker::Number.decimal(l_digits: 4, r_digits: 2),
+      description: Faker::Lorem.paragraph,
+      image: Faker::Internet.url
+    }
   end
 end
