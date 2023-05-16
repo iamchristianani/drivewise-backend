@@ -96,8 +96,7 @@ RSpec.describe 'Reservation', type: :request do
     it 'renders the destroy template with the deleted reservation' do
       reservation = FactoryBot.create(:reservation)
       delete "/api/v1/users/#{reservation.user_id}/reservations/#{reservation.id}"
-      expect(response).to have_http_status(200)
-      expect(JSON.parse(response.body)).to include(JSON.parse({ 'errors' => [] }.to_json))
+      expect(response).to have_http_status(204)
     end
   end
 end

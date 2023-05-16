@@ -1,0 +1,321 @@
+---
+openapi: 3.0.1
+info:
+  title: Drivewise API
+  version: v1
+paths:
+  "/api/v1/cars":
+    get:
+      summary: list cars
+      tags:
+      - Cars
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create car
+      tags:
+      - Cars
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                make:
+                  type: string
+                  example: Lincoln
+                model:
+                  type: string
+                  example: A8
+                year:
+                  type: integer
+                  example: 2019
+                color:
+                  type: string
+                  example: Grey
+                body_type:
+                  type: string
+                  example: Coupe
+                engine_capacity:
+                  type: integer
+                  example: 3 Cylinder Engine
+                engine_cylinders:
+                  type: integer
+                  example: 1 Cylinder Engine
+                turbo:
+                  type: boolean
+                  example: true
+                horsepower:
+                  type: integer
+                  example: 425
+                torque:
+                  type: integer
+                  example: 715
+                weight:
+                  type: integer
+                  example: 7669
+                drivetrain:
+                  type: string
+                  example: AWD
+                transmission:
+                  type: string
+                  example: CVT
+                fuel_type:
+                  type: string
+                  example: Ethanol
+                doors:
+                  type: integer
+                  example: 2
+                seats:
+                  type: integer
+                  example: 4
+                mileage:
+                  type: integer
+                  example: 83569
+                price:
+                  type: integer
+                  example: 5132.81
+                description:
+                  type: string
+                  example: Quos nihil adipisci. Explicabo sed officiis. Architecto
+                    reprehenderit vel.
+                image:
+                  type: string
+                  example: http://hilpert.test/chantal
+              required:
+              - make
+              - model
+              - year
+              - color
+              - body_type
+              - engine_capacity
+              - engine_cylinders
+              - turbo
+              - horsepower
+              - torque
+              - weight
+              - drivetrain
+              - transmission
+              - fuel_type
+              - doors
+              - seats
+              - mileage
+              - price
+              - description
+              - image
+  "/api/v1/cars/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show car
+      tags:
+      - Cars
+      responses:
+        '200':
+          description: successful
+    delete:
+      summary: delete car
+      tags:
+      - Cars
+      responses:
+        '200':
+          description: successful
+  "/api/v1/reservations":
+    get:
+      summary: list all reservations
+      tags:
+      - Reservations
+      responses:
+        '200':
+          description: successful
+  "/api/v1/reservations/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show reservation
+      tags:
+      - Reservations
+      responses:
+        '200':
+          description: successful
+  "/api/v1/users/{user_id}/reservations":
+    parameters:
+    - name: user_id
+      in: path
+      description: user_id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: list user's reservations
+      tags:
+      - Reservations
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create reservation
+      parameters:
+      - name: car_id
+        in: path
+        description: car_id
+        required: true
+        schema:
+          type: string
+      tags:
+      - Reservations
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reservation_date:
+                  type: string
+                  example: '2023-08-03'
+                city:
+                  type: string
+                  example: North Leslie
+              required:
+              - reservation_date
+              - city
+              - car_id
+              - user_id
+  "/api/v1/users/{user_id}/reservations/{id}":
+    parameters:
+    - name: user_id
+      in: path
+      description: user_id
+      required: true
+      schema:
+        type: string
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show reservation
+      tags:
+      - Reservations
+      responses:
+        '200':
+          description: successful
+    patch:
+      summary: update reservation
+      tags:
+      - Reservations
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                city:
+                  type: string
+                  example: Antoniafort
+              required:
+              - city
+    delete:
+      summary: delete reservation
+      tags:
+      - Reservations
+      responses:
+        '200':
+          description: successful
+  "/api/v1/users":
+    get:
+      summary: list users
+      tags:
+      - Users
+      responses:
+        '200':
+          description: successful
+    post:
+      summary: create user
+      tags:
+      - Users
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                  example: jona
+              required:
+              - username
+  "/api/v1/users/{id}":
+    parameters:
+    - name: id
+      in: path
+      description: id
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show user
+      tags:
+      - Users
+      responses:
+        '200':
+          description: successful
+    patch:
+      summary: update user
+      tags:
+      - Users
+      parameters: []
+      responses:
+        '200':
+          description: successful
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                  example: kazuko.terry
+              required:
+              - username
+    delete:
+      summary: delete user
+      tags:
+      - Users
+      responses:
+        '200':
+          description: successful
+servers:
+- url: http://{defaultHost}
+  variables:
+    defaultHost:
+      default: 127.0.0.1:3000/
