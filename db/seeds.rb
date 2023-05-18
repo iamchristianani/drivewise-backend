@@ -35,7 +35,7 @@ cars = Car.create([
                       mileage: 0,
                       price: 34_800,
                       description: 'The 2017 Honda Civic Type R is a high-performance hatchback that delivers thrilling driving dynamics, sharp handling, and impressive acceleration.',
-                      image: '2017_honda_civic_type_r_5-HD.jpg'
+                      image: 'https://res.cloudinary.com/djqt4g3pl/image/upload/v1684148093/samples/cars/2017_honda_civic_type_r_5-HD_ecitlh.jpg'
                     },
                     {
                       make: 'Tesla',
@@ -57,7 +57,7 @@ cars = Car.create([
                       mileage: 0,
                       price: 79_990,
                       description: 'The Tesla Model S is a high-performance electric sedan that offers blistering acceleration, advanced technology, and long-range driving capabilities.',
-                      image: '2022_tesla_model_s_plaid_5k-HD.jpg'
+                      image: 'https://res.cloudinary.com/djqt4g3pl/image/upload/v1684148122/samples/cars/2022_tesla_model_s_plaid_5k-HD_ul33zu.jpg'
                     },
                     {
                       make: 'Dodge',
