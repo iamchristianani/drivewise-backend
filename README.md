@@ -102,9 +102,7 @@ The API endpoints are:
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> Add a link to your deployed project.
-
-- [Live Demo Link](https://google.com)
+- [Live Demo Link](https://drivewise.up.railway.app/api/v1/api-docs)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
