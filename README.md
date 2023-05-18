@@ -192,8 +192,8 @@ To run tests locally, run the following command:
 
 👤 **Christian Ani**
 
-- GitHub: [@iamschristian](https://github.com/iamchristianani)
-- Twitter: [@Kriznode](https://twitter.com/kriznode)
+- GitHub: [@iamchristianani](https://github.com/iamchristianani)
+- Twitter: [@kriznode](https://twitter.com/kriznode)
 - LinkedIn: [Christian Ani](https://www.linkedin.com/in/anikriz/)
 
 👤 **Ahmed Abas**
