@@ -11,6 +11,8 @@
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
+- [Frontend](#frontend)
+- [Kanban Board](#kanban-board)
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
@@ -34,6 +36,13 @@
 # 📖 DriveWise Backend <a name="about-project"></a>
 
 **[DriveWise Backend]** is a Ruby on Rails API that serves data to the [DriveWise Frontend](https://github.com/iamchristianani/drivewise-frontend) application. It is a RESTful API that allows users to create, read, update, and delete data from the database.
+
+## Frontend <a name ='frontend'></a>
+- The link to the frontend repository of the app can be found [here](https://github.com/iamchristianani/drivewise-frontend)
+
+## Kanban Board <a name ="kanban-board"></a>
+- The Kanban board can be found [here](https://github.com/users/iamchristianani/projects/6)
+- Screenshot of the initial state of our Kanban board can be found [here](https://user-images.githubusercontent.com/116313214/236166494-6c77868c-f82c-4be8-8161-5d1da758e237.png)
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -177,6 +186,8 @@ To run tests locally, run the following command:
 <!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>
+
+> We have a total number of 4 team members, namely:
 
 👤 **Yuvenal Njoroge**
 
