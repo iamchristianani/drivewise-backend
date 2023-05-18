@@ -105,8 +105,8 @@ RSpec.describe 'api/v1/reservations', type: :request do
     {
       reservation_date: Faker::Date.between(from: '2023-05-19', to: '2023-12-31'),
       city: Faker::Address.city,
-      car_id: car_id,
-      user_id: user_id
+      car_id:,
+      user_id:
     }
   end
 end
