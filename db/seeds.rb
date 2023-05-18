@@ -43,8 +43,8 @@ cars = Car.create([
                       year: 2022,
                       color: 'Deep Blue Metallic',
                       body_type: 'Sedan',
-                      engine_capacity: nil,
-                      engine_cylinders: nil,
+                      engine_capacity: 4.0,
+                      engine_cylinders: 6,
                       turbo: false,
                       horsepower: 670,
                       torque: 750,
@@ -79,7 +79,7 @@ cars = Car.create([
                       mileage: 0,
                       price: 70_895,
                       description: 'The Dodge Challenger Hellcat is a high-performance muscle car that offers a supercharged V8 engine, aggressive styling, and an iconic heritage.',
-                      image: '2021-dodge-challenger-srt-hellcat.jpg'
+                      image: 'https://res.cloudinary.com/djqt4g3pl/image/upload/v1684148109/samples/cars/2021-dodge-challenger-srt-hellcat_fux2du.jpg'
                     },
                     {
                       make: 'Porsche',
@@ -101,7 +101,7 @@ cars = Car.create([
                       mileage: 0,
                       price: 99_999,
                       description: 'The 2022 Porsche 911 delivers a comfortable and luxurious ride, with exceptional handling and acceleration. The iconic design is complemented by state-of-the-art technology and premium materials throughout the cabin.',
-                      image: '2022_porsche_911_gt3_touring_49.jpg'
+                      image: 'https://res.cloudinary.com/djqt4g3pl/image/upload/v1684148109/samples/cars/2022_porsche_911_gt3_touring_49_spqxdq.jpg'
                     },
                     {
                       make: 'BMW',
@@ -123,7 +123,7 @@ cars = Car.create([
                       mileage: 10_000,
                       price: 95_000,
                       description: "The BMW i8 is a plug-in hybrid sports car that is designed to thrill. With its striking, futuristic design and impressive performance capabilities, it's no wonder that the i8 has become one of the most sought-after cars on the market.",
-                      image: '2019-bmw-i8-roadster.jpg'
+                      image: 'https://res.cloudinary.com/djqt4g3pl/image/upload/v1684148111/samples/cars/2019-bmw-i8-roadster_a0hqm0.jpg'
                     },
                     {
                       make: 'Ford',
@@ -145,7 +145,7 @@ cars = Car.create([
                       mileage: 0,
                       price: 78_000,
                       description: 'The 2021 Ford Mustang Shelby GT500 is a high-performance variant of the Mustang designed and manufactured by Ford Performance. It features a supercharged 5.2-liter V8 engine that produces 760 horsepower and 625 lb-ft of torque. It has a top speed of 180 mph and can go from 0 to 60 mph in just 3.3 seconds.',
-                      image: '2021-Ford-Mustang-Shelby-GT500-3.jpg'
+                      image: 'https://res.cloudinary.com/djqt4g3pl/image/upload/v1684148110/samples/cars/2021-Ford-Mustang-Shelby-GT500-3_glgaep.jpg'
                     },
                     {
                       make: 'Chevrolet',
@@ -167,7 +167,7 @@ cars = Car.create([
                       mileage: 0,
                       price: 58_995,
                       description: 'The 2020 Chevrolet Corvette Stingray is a mid-engine sports car that combines power and precision for an exhilarating driving experience. With its sleek design and advanced technology, this car is sure to turn heads on the road.',
-                      image: 'chevrolet-corvette-c8-stingray-2020.jpg'
+                      image: 'https://res.cloudinary.com/djqt4g3pl/image/upload/v1684148149/samples/cars/chevrolet_corvette_stingray_70th_anniversary_convertible_2023_5k-HD_jw53jh.jpg'
                     },
                     {
                       make: 'Toyota',
@@ -189,7 +189,7 @@ cars = Car.create([
                       mileage: 0,
                       price: 32_000,
                       description: "The 2021 Toyota GR Yaris is a rally-inspired hot hatchback that boasts impressive performance capabilities and a sleek, sporty design. With its powerful 1.6-liter turbocharged engine and all-wheel drive system, this car is a true driver's delight.",
-                      image: 'Toyota-GR-Yaris-Japan-24.jpg'
+                      image: 'https://res.cloudinary.com/djqt4g3pl/image/upload/v1684148112/samples/cars/Toyota-GR-Yaris-Japan-24_jkji7k.webp'
                     },
                     {
                       make: 'Audi',
@@ -211,7 +211,7 @@ cars = Car.create([
                       mileage: 0,
                       price: 109_995,
                       description: 'The Audi RS6 Avant is a performance wagon that delivers an exhilarating driving experience with its powerful engine, advanced technology, and luxurious features.',
-                      image: 'audi_rs_6_avant_performance_5k-HD.jpg'
+                      image: 'https://res.cloudinary.com/djqt4g3pl/image/upload/v1684148125/samples/cars/audi_rs_6_avant_performance_5k-HD_d00t9u.jpg'
                     },
                     {
                       make: 'Mercedes-Benz',
@@ -233,7 +233,7 @@ cars = Car.create([
                       mileage: 0,
                       price: 140_000,
                       description: "The Mercedes-AMG GT is a two-door sports car that offers a thrilling driving experience. The car's V8 engine produces an impressive amount of power and torque, and it can accelerate from 0 to 60 mph in just over 3 seconds. The AMG GT also features a luxurious and well-appointed interior, with high-quality materials and advanced technology.",
-                      image: 'mercedes_amg_gt_night_edition_2021_4k_2-HD.jpg'
+                      image: 'https://res.cloudinary.com/djqt4g3pl/image/upload/v1684148132/samples/cars/mercedes_amg_gt_night_edition_2021_4k_2-HD_wuenjg.jpg'
                     }
                   ])
 

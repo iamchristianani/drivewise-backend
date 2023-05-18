@@ -213,6 +213,7 @@ GEM
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
     thor (1.2.2)
+    timeliness (0.4.5)
     timeout (0.3.2)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
@@ -241,6 +242,7 @@ DEPENDENCIES
   rspec-rails
   rswag
   sprockets-rails (~> 3.4)
+  timeliness
   tzinfo-data
 
 RUBY VERSION
