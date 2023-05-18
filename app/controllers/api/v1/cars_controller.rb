@@ -24,6 +24,7 @@ class Api::V1::CarsController < ApplicationController
 
   def destroy
     @car = Car.find(params[:id])
+    Reservation.where(car_id: @car.id).destroy_all
     if @car
       @car.destroy
       render json: { message: 'Car deleted successfully.' }, status: 200
