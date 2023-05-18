@@ -178,17 +178,29 @@ To run tests locally, run the following command:
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Author1**
+👤 **Yuvenal Njoroge**
 
 - GitHub: [@yuvenalmash](https://github.com/yuvenalmash)
 - Twitter: [@YuvenalNjoroge](https://twitter.com/YuvenalNjoroge)
 - LinkedIn: [Yuvenal Njoroge](https://linkedin.com/in/yuvenal-njoroge)
 
-👤 **Author2**
+👤 **Roy Jumah**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@RoyJumah](https://github.com/RoyJumah)
+- Twitter: [@roy_issues](https://twitter.com/roy_issues)
+- LinkedIn: [Roy Jumah](https://www.linkedin.com/in/roy-jumah/)
+
+👤 **Christian Ani**
+
+- GitHub: [@iamschristian](https://github.com/iamchristianani)
+- Twitter: [@Kriznode](https://twitter.com/kriznode)
+- LinkedIn: [Christian Ani](https://www.linkedin.com/in/anikriz/)
+
+👤 **Ahmed Abas**
+
+- GitHub: [@boo-shehab](https://github.com/boo-shehab)
+- Twitter: [@boo-shehab2000](https://twitter.com/boo_shehab2000)
+- LinkedIn: [@ahmed-al-ali-77b6a0246](https://linkedin.com/in/ahmed-al-ali-77b6a0246)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
