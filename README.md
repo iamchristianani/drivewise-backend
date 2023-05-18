@@ -19,9 +19,9 @@
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
   - [Install](#install)
+  - [Setup database](#setup-database)
   - [Usage](#usage)
   - [Run tests](#run-tests)
-  - [Deployment](#deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -31,29 +31,18 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [your_project_name] <a name="about-project"></a>
+# 📖 DriveWise Backend <a name="about-project"></a>
 
-> Describe your project in 1 or 2 sentences.
-
-**[your_project__name]** is a...
+**[DriveWise Backend]** is a Ruby on Rails API that serves data to the [DriveWise Frontend](https://github.com/iamchristianani/drivewise-frontend) application. It is a RESTful API that allows users to create, read, update, and delete data from the database.
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
-> Describe the tech stack and include only the relevant sections that apply to your project.
-
 <details>
-  <summary>Client</summary>
+  <summary>Framework</summary>
   <ul>
-    <li><a href="https://reactjs.org/">React.js</a></li>
-  </ul>
-</details>
-
-<details>
-  <summary>Server</summary>
-  <ul>
-    <li><a href="https://expressjs.com/">Express.js</a></li>
+    <li><a href="https://rubyonrails.org/">Ruby on Rails</a></li>
   </ul>
 </details>
 
@@ -68,11 +57,44 @@
 
 ### Key Features <a name="key-features"></a>
 
-> Describe between 1-3 key features of the application.
+- **User** - Create, read, update, and delete users
+- **Car** - Create, read, update, and delete cars
+- **Reaservation** - Create, read, update, and delete reservations.
 
-- **[key_feature_1]**
-- **[key_feature_2]**
-- **[key_feature_3]**
+The API endpoints are:
+<details>
+  <summary>Users</summary>
+  <ul>
+    <li>GET /users</li>
+    <li>GET /users/:id</li>
+    <li>POST /users</li>
+    <li>PATCH /users/:id</li>
+    <li>DELETE /users/:id</li>
+  </ul>
+</details>
+<details>
+  <summary>Cars</summary>
+  <ul>
+    <li>GET /cars</li>
+    <li>GET /cars/:id</li>
+    <li>POST /cars</li>
+    <li>PATCH /cars/:id</li>
+    <li>DELETE /cars/:id</li>
+  </ul>
+</details>
+<details>
+  <summary>Reservations</summary>
+  <ul>
+    <li>GET /reservations</li>
+    <li>GET /reservations/:id</li>
+    <li>GET /users/:user_id/reservations</li>
+    <li>GET /cars/:car_id/reservations</li>
+    <li>POST /users/:user_id/reservations</li>
+    <li>PATCH /users/:user_id/reservations/:id</li>
+    <li>DELETE /users/:user_id/reservations/:id</li>
+  </ul>
+</details>
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -80,9 +102,9 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> Add a link to your deployed project.
+- [Backend Demo Link](https://drivewise.up.railway.app/api/v1/api-docs)
 
-- [Live Demo Link](https://google.com)
+- [Frontend Demo Link](https://drivewise.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -90,83 +112,65 @@
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-> Describe how a new developer could make use of your project.
-
 To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
 In order to run this project you need:
 
-<!--
-Example command:
-
-```sh
- gem install rails
-```
- -->
+- Ruby
+- Rails
+- PostgreSQL
 
 ### Setup
 
 Clone this repository to your desired folder:
 
-<!--
-Example commands:
 
 ```sh
   cd my-folder
-  git clone git@github.com:myaccount/my-project.git
+  git clone git@github.com:iamchristianani/drivewise-backend.git
 ```
---->
 
 ### Install
 
 Install this project with:
 
-<!--
-Example command:
+```sh
+  cd drivewise-backend
+  bundle install
+```
+
+### Setup database
+
+Setup database with:
 
 ```sh
-  cd my-project
-  gem install
+  rails db:create
+  rails db:migrate
+  rails db:seed
 ```
---->
 
 ### Usage
 
 To run the project, execute the following command:
 
-<!--
-Example command:
-
 ```sh
   rails server
 ```
---->
 
+To test the endpoints with swagger, visit:
+
+```sh
+  http://localhost:3000/api-docs
+```
 ### Run tests
 
-To run tests, run the following command:
-
-<!--
-Example command:
+To run tests locally, run the following command:
 
 ```sh
-  bin/rails test test/models/article_test.rb
+  rspec
 ```
---->
-
-### Deployment
-
-You can deploy this project using:
-
-<!--
-Example:
-
-```sh
-
-```
- -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -174,19 +178,29 @@ Example:
 
 ## 👥 Authors <a name="authors"></a>
 
-> Mention all of the collaborators of this project.
+👤 **Yuvenal Njoroge**
 
-👤 **Author1**
+- GitHub: [@yuvenalmash](https://github.com/yuvenalmash)
+- Twitter: [@YuvenalNjoroge](https://twitter.com/YuvenalNjoroge)
+- LinkedIn: [Yuvenal Njoroge](https://linkedin.com/in/yuvenal-njoroge)
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+👤 **Roy Jumah**
 
-👤 **Author2**
+- GitHub: [@RoyJumah](https://github.com/RoyJumah)
+- Twitter: [@roy_issues](https://twitter.com/roy_issues)
+- LinkedIn: [Roy Jumah](https://www.linkedin.com/in/roy-jumah/)
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+👤 **Christian Ani**
+
+- GitHub: [@iamschristian](https://github.com/iamchristianani)
+- Twitter: [@Kriznode](https://twitter.com/kriznode)
+- LinkedIn: [Christian Ani](https://www.linkedin.com/in/anikriz/)
+
+👤 **Ahmed Abas**
+
+- GitHub: [@boo-shehab](https://github.com/boo-shehab)
+- Twitter: [@boo-shehab2000](https://twitter.com/boo_shehab2000)
+- LinkedIn: [@ahmed-al-ali-77b6a0246](https://linkedin.com/in/ahmed-al-ali-77b6a0246)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -194,11 +208,8 @@ Example:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> Describe 1 - 3 features you will add to the project.
-
-- [ ] **[new_feature_1]**
-- [ ] **[new_feature_2]**
-- [ ] **[new_feature_3]**
+- [ ] **[Authentication]** - Add authentication to the API endpoints to allow only authorized users to access the data.
+- [ ] **[Authorization]** - Add authorization for admin users to access the data.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -208,7 +219,7 @@ Example:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/iamchristianani/drivewise-backend/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -216,9 +227,7 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
-> Write a message to encourage readers to support your project
-
-If you like this project...
+If you like this project, give it a ⭐️!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -226,9 +235,7 @@ If you like this project...
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-> Give credit to everyone who inspired your codebase.
-
-I would like to thank...
+I would like to thank all the contributors to this project.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
