@@ -19,9 +19,9 @@
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
   - [Install](#install)
+  - [Setup database](#setup-database)
   - [Usage](#usage)
   - [Run tests](#run-tests)
-  - [Deployment](#deployment)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
@@ -31,7 +31,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [DriveWise Backend] <a name="about-project"></a>
+# 📖 DriveWise Backend <a name="about-project"></a>
 
 **[DriveWise Backend]** is a Ruby on Rails API that serves data to the [DriveWise Frontend](https://github.com/iamchristianani/drivewise-frontend) application. It is a RESTful API that allows users to create, read, update, and delete data from the database.
 
@@ -102,7 +102,9 @@ The API endpoints are:
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://drivewise.up.railway.app/api/v1/api-docs)
+- [Backend Demo Link](https://drivewise.up.railway.app/api/v1/api-docs)
+
+- [Frontend Demo Link](https://drivewise.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
