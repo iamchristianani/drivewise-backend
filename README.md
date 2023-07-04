@@ -220,7 +220,7 @@ To run tests locally, run the following command:
 ## 🔭 Future Features <a name="future-features"></a>
 
 - [ ] **[Authentication]** - Add authentication to the API endpoints to allow only authorized users to access the data.
-- [ ] **[Authorization]** - Add authorization for admin users to access the data.
+- [ ] **[Authorization]** - Add authorization for only admin users to access some specific data.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
